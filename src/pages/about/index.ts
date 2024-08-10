@@ -1,3 +1,1 @@
-import { aboutPageRoute } from './about-page.route'
-
-export { aboutPageRoute }
+export { aboutPageRoute } from './about-page.route'

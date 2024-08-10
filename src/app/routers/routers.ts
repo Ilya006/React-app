@@ -1,31 +1,23 @@
-import { createElement, lazy } from 'react'
-import { createBrowserRouter, Outlet, redirect, useRouteError } from 'react-router-dom'
+import { createElement } from 'react'
+import { createBrowserRouter, Outlet, redirect } from 'react-router-dom'
 import { homePageRoute } from '../../pages/home'
 import { aboutPageRoute } from '../../pages/about'
 import { contactPageRoute } from '../../pages/contact'
 import { page404Route } from '../../pages/page-404'
 import { pathKeys } from '../../shared/lib/react-router'
 import { compose, withSuspense } from '../../shared/lib/react'
+import { Curtain } from '../../shared/ui/Curtain'
+import { BubbleError } from '../../shared/ui/BubbleError'
+import GuestLayout from '../layouts/guest-layout'
+import UserLayout from '../layouts/user-layout'
 
 const enhance = compose((component) =>
-  withSuspense(component, { FallbackComponent: LayoutLoading })
-)
-
-const GuestLayout = lazy(() => 
-  import('./../layouts').then((module) => ({ 
-    default: module.GuestLayout
-  }))
-)
-
-const UserLayout = lazy(() => 
-  import('./../layouts').then((module) => ({ 
-    default: module.UserLayout
-  }))
+  withSuspense(component, { FallbackComponent: Curtain })
 )
 
 export const routers = createBrowserRouter([
   {
-    errorElement: <BubbleError />,
+    errorElement: createElement(BubbleError),
     children: [
       {
         element: createElement(enhance(GuestLayout)),
@@ -46,15 +38,3 @@ export const routers = createBrowserRouter([
     ]
   }
 ])
-
-function LayoutLoading() {
-  return <h2>Loading...</h2>
-}
-
-function BubbleError() {
-  const error = useRouteError()
-  console.error(error)
-
-  if (error) throw error
-  return null
-}

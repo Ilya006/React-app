@@ -1,9 +1,9 @@
-import { lazy } from 'react';
+import { lazy } from 'react'
 
 // For PROD
 // export default lazy(() =>
-//   import('./user.layout').then((module) => ({ 
-//     default: module.UserLayout
+//   import('./about-page').then(module => ({
+//     default: module.AboutPage
 //   }))
 // )
 
@@ -11,9 +11,9 @@ import { lazy } from 'react';
 export default lazy<React.ComponentType>(() => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      import('./user.layout').then(module => {
+      import('./about-page').then(module => {
         resolve({ 
-          default: module.UserLayout
+          default: module.AboutPage
         })
       })
     }, 2000)
