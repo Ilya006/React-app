@@ -16,6 +16,6 @@ export default lazy<React.ComponentType>(() => {
           default: module.HomePage
         })
       })
-    }, 2000)
+    }, 200)
   })
 })

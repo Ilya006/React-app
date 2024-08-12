@@ -2,8 +2,8 @@ import { lazy } from 'react'
 
 // For PROD
 // export default lazy(() =>
-//   import('./guest.layout').then((module) => ({
-//     default: module.GuestLayout
+//   import('./main.layout').then((module) => ({
+//     default: module.MainLayout
 //   }))
 // )
 
@@ -11,11 +11,11 @@ import { lazy } from 'react'
 export default lazy<React.ComponentType>(() => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      import('./guest.layout').then(module => {
+      import('./main.layout').then(module => {
         resolve({ 
-          default: module.GuestLayout
+          default: module.MainLayout
         })
       })
-    }, 2000)
+    }, 200)
   })
 })

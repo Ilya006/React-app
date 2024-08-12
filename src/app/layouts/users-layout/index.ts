@@ -11,11 +11,11 @@ import { lazy } from 'react';
 export default lazy<React.ComponentType>(() => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      import('./user.layout').then(module => {
+      import('./users.layout').then(module => {
         resolve({ 
-          default: module.UserLayout
+          default: module.UsersLayout
         })
       })
-    }, 2000)
+    }, 200)
   })
 })

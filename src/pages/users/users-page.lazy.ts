@@ -2,8 +2,8 @@ import { lazy } from 'react'
 
 // For PROD
 // export default lazy(() =>
-//   import('./contact-page').then(module => ({
-//     default: module.ContactPage
+//   import('./users-page').then(module => ({
+//     default: module.UsersPage
 //   }))
 // )
 
@@ -11,11 +11,11 @@ import { lazy } from 'react'
 export default lazy<React.ComponentType>(() => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      import('./contact-page').then(module => {
+      import('./users-page').then(module => {
         resolve({ 
-          default: module.ContactPage
+          default: module.UsersPage
         })
       })
-    }, 2000)
+    }, 200)
   })
 })

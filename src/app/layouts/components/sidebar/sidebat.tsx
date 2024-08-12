@@ -13,10 +13,10 @@ export function Sidebar() {
             <NavLink to={ pathKeys.home() }>Home</NavLink>
           </li>
           <li className={ s.item }>
-            <NavLink to={ pathKeys.about() }>About</NavLink>
+            <NavLink to={ pathKeys.albums.root() }>Albums</NavLink>
           </li>
           <li className={ s.item }>
-            <NavLink to={ pathKeys.contact() }>Contact</NavLink>
+            <NavLink to={ pathKeys.users.root() }>Users</NavLink>
           </li>
         </ul>
       </nav>

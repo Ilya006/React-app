@@ -1,0 +1,1 @@
+export { albumsPageRoute } from './albums-page.route'

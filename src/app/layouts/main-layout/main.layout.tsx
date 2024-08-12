@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom'
-import { Header } from '../components'
-import s from './user.layout.module.css'
+import { Sidebar } from '../components'
+import s from './main.layout.module.css'
 
-export function UserLayout() {
+export function MainLayout() {
   return (
     <div className={ s.layout }>
-      <Header />
+      <Sidebar />
       <main className={ s.main }>
         <Outlet />
       </main>

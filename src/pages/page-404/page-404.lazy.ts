@@ -16,6 +16,6 @@ export default lazy<React.ComponentType>(() => {
           default: module.Page404
         })
       })
-    }, 2000)
+    }, 200)
   })
 })
