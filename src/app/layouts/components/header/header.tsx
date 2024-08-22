@@ -1,18 +1,29 @@
 import { NavLink } from 'react-router-dom'
-import { pathKeys } from '../../../../shared/lib/react-router'
+import { Logo } from '@/shared/ui/logo'
+import { pathKeys } from '@/shared/lib/react-router'
+import clsx from 'clsx'
+
 import s from './header.module.css'
 
 export function Header() {
   return (
-    <header className={ s.header }>
-      <h2 className={ s.logo }>Logo &#129299;</h2>
-
-      <h2>Users</h2>
-
-      <nav className={ s.nav }>
-        <ul className={ s.list }>
-          <li className={ s.item }>
-            <NavLink to={ pathKeys.home() }>Home</NavLink>
+    <header className={clsx(s.header, 'container')}>
+      <nav className={s.nav}>
+        <Logo />
+        <ul className={s.list}>
+          <li className={s.item}>
+            <NavLink
+              end
+              to={pathKeys.home()}
+              className={({ isActive }) => isActive ? s.active : ''}
+            >Главная</NavLink>
+          </li>
+          <li className={s.item}>
+            <NavLink
+              end
+              to={pathKeys.catalog()}
+              className={({ isActive }) => isActive ? s.active : ''}
+            >Каталог</NavLink>
           </li>
         </ul>
       </nav>

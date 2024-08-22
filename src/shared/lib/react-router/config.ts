@@ -5,6 +5,9 @@ export const pathKeys = {
   home() {
     return pathKeys.root
   },
+  catalog() {
+    return pathKeys.root.concat('catalog', '/')
+  },
   posts: {
     root() {
       return pathKeys.root.concat('posts/')
