@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
-import { Logo } from '@/shared/ui/logo'
-import { pathKeys } from '@/shared/lib/react-router'
+import { Logo } from '~ui/logo'
+import { pathKeys } from '~/shared/lib/react-router'
 import clsx from 'clsx'
 
 import s from './header.module.css'
