@@ -12,6 +12,8 @@
   "dependencies": {
     "axios": "^1.7.3",
     "clsx": "^2.1.1",
+    "express": "^4.19.2",
+    "node-cache": "^5.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-query": "^3.39.3",
@@ -19,6 +21,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@neodx/svg": "^0.7.1",
     "@types/node": "^22.4.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
