@@ -6,6 +6,8 @@ import type { ReactNode } from 'react'
 import type { SwiperProps } from 'swiper/react'
 import type { SwiperOptions } from 'swiper/types'
 import s from './carousel.module.css'
+import { useDomRefWithSetter } from '../lib/use-dom-ref-with-setter'
+import { SlideBtn } from './slide-button'
 
 interface CarouselProps<T> extends SwiperProps {
   items: T[] | undefined,
@@ -24,13 +26,16 @@ export function Carousel<T, _>(props: CarouselProps<T>) {
     classNames,
     slideClassNames,
     renderElement,
-    // prevBtnClass,
-    // nextBtnClass,
+    prevBtnClass,
+    nextBtnClass,
     options,
     modules,
     navigation = true,
     ...otherProps
   } = props
+
+  const [nextEl, nextElRef] = useDomRefWithSetter<HTMLButtonElement>()
+  const [prevEl, prevElRef] = useDomRefWithSetter<HTMLButtonElement>()
 
   const renderSlides = useCallback(
     (slides: typeof items) => 
@@ -64,18 +69,24 @@ export function Carousel<T, _>(props: CarouselProps<T>) {
   return (
     <Swiper
       modules={[...(modules ?? defaultModules)]}
-      className={clsx(s.slide, classNames)}
+      className={clsx(s.slider, classNames)}
+      navigation={{
+        prevEl,
+        nextEl,
+      }}
       {...swiperOptions}
       {...otherProps}
     >
       {navigation && (
         <>
-          <button>
-            prevBtn
-          </button>
-          <button>
-            nextBtn
-          </button>
+          <SlideBtn 
+            ref={prevElRef}
+            className={clsx(s.prev, prevBtnClass)}
+          />
+          <SlideBtn 
+            ref={nextElRef}
+            className={clsx(s.next, nextBtnClass)}
+          />
         </>
       )}
       {renderSlides(items)}

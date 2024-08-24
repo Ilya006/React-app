@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import 'swiper/css'
 import { Carousel } from '~ui/carousel'
 
@@ -21,9 +22,13 @@ const testData = [
 ]
 
 export function HomePage() {
+  const [ value, setValue ] = useState(0)
+  
   return (
     <div>
       <h1>Home Page</h1>
+      <h4>Count: {value}</h4>
+      <button onClick={() => setValue(prev => prev += 1)}>Click me</button>
 
       <Carousel
         items={testData}

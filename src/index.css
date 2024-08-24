@@ -11,6 +11,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /* Base */
+  --duration: 0.3s;
+
+  /* Colors */
+  --color-white: #fff;
+
   /* Size */
   --header-height: 60px;
 }
@@ -74,4 +80,13 @@ button:focus-visible {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+}
+
+.btn-reset {
+  border: none;
+  font-family: inherit;
+  padding: 0;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
 }

@@ -1,9 +1,12 @@
 export interface SpritesMap {
-    'genres': 'cup' | 'fire'
+    'common': 'chevron',
+'genres': 'cup' | 'fire'
   }
 export const SPRITES_META: {
-        'genres': Array<'cup' | 'fire'>
+        'common': Array<'chevron'>,
+'genres': Array<'cup' | 'fire'>
       } = {
-    'genres': ['cup',
+    'common': ['chevron'],
+'genres': ['cup',
 'fire']
   };
