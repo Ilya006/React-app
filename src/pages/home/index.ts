@@ -1,3 +1,1 @@
-import { homePageRoute } from './home-page.route'
-
-export { homePageRoute }
+export { homePageRoute } from './lib/route'

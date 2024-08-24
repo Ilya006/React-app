@@ -2,7 +2,7 @@ import { lazy } from 'react'
 
 // For PROD
 // export default lazy(() =>
-//   import('./main.layout').then((module) => ({
+//   import('./ui').then((module) => ({
 //     default: module.MainLayout
 //   }))
 // )
@@ -11,7 +11,7 @@ import { lazy } from 'react'
 export default lazy<React.ComponentType>(() => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      import('./main.layout').then(module => {
+      import('./ui').then(module => {
         resolve({ 
           default: module.MainLayout
         })

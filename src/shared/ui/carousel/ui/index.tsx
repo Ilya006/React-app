@@ -70,6 +70,7 @@ export function Carousel<T, _>(props: CarouselProps<T>) {
     <Swiper
       modules={[...(modules ?? defaultModules)]}
       className={clsx(s.slider, classNames)}
+      
       navigation={{
         prevEl,
         nextEl,

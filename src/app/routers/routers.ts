@@ -2,7 +2,6 @@ import { createElement } from 'react'
 import { createBrowserRouter, Outlet, redirect } from 'react-router-dom'
 import { page404Route } from '~/pages/page-404'
 import { homePageRoute } from '~/pages/home'
-import { catalogPageRoute } from '~/pages/catalog'
 import { BubbleError } from '~ui/BubbleError'
 import { Curtain } from '~ui/Curtain'
 import { compose, withSuspense } from '~/shared/lib/react'
@@ -19,7 +18,7 @@ export const routers = createBrowserRouter([
     children: [
       {
         element: createElement(enhance(mainLayout)),
-        children: [homePageRoute, catalogPageRoute]
+        children: [homePageRoute]
       },
       {
         element: createElement(Outlet),

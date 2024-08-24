@@ -1,0 +1,26 @@
+@import 'breakpoints.scss';
+@import 'vars.scss';
+@import 'global.scss';
+@import 'themes/dark.scss';
+
+.app {
+  height: 100%;
+  background-color: var(--bg-main);
+  color: var(--text-color-main);
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.btn-reset {
+  border: none;
+  font-family: inherit;
+  padding: 0;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer
+}
