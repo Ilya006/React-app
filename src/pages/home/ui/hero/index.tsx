@@ -13,7 +13,8 @@ export function Hero() {
           items={heroMovies}
           renderElement={HeroSlide}
           options={{
-            loop: true
+            loop: true,
+            centeredSlides: true
           }}
         />
       </div>

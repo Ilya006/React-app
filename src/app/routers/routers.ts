@@ -7,6 +7,7 @@ import { Curtain } from '~ui/Curtain'
 import { compose, withSuspense } from '~/shared/lib/react'
 import { pathKeys } from '~/shared/lib/react-router'
 import mainLayout from '../layouts/main-layout'
+import { testPageRoute } from '~/pages/test/config/route'
 
 const enhance = compose((component) =>
   withSuspense(component, { FallbackComponent: Curtain })
@@ -18,7 +19,7 @@ export const routers = createBrowserRouter([
     children: [
       {
         element: createElement(enhance(mainLayout)),
-        children: [homePageRoute]
+        children: [homePageRoute, testPageRoute]
       },
       {
         element: createElement(Outlet),

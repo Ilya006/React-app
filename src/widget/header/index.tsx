@@ -25,6 +25,13 @@ export function Header() {
               className={({ isActive }) => isActive ? s.active : ''}
             >Каталог</NavLink>
           </li>
+          <li className={s.item}>
+            <NavLink
+              end
+              to={'/test'}
+              className={({ isActive }) => isActive ? s.active : ''}
+            >Тест</NavLink>
+          </li>
         </ul>
       </nav>
     </header>
