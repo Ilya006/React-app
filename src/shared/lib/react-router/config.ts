@@ -1,4 +1,10 @@
-import { albumsPageParams, moviePageParams, postsPageParams, usersPageParams } from './react-router.types'
+import { 
+  albumsPageParams, 
+  catalogPageParams,
+  moviePageParams,
+  postsPageParams,
+  usersPageParams
+} from './react-router.types'
 
 export const pathKeys = {
   root: '/',
@@ -13,8 +19,13 @@ export const pathKeys = {
       return pathKeys.movie.root().concat(String(movieId), '/')
     }
   },
-  catalog() {
-    return pathKeys.root.concat('catalog', '/')
+  catalog: {
+    root() {
+      return pathKeys.root.concat('catalog/')
+    },
+    byCategory({ genre }: catalogPageParams) {
+      return pathKeys.catalog.root().concat(genre, '/')
+    },
   },
   posts: {
     root() {

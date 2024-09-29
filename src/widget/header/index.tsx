@@ -21,7 +21,7 @@ export function Header() {
           <li className={s.item}>
             <NavLink
               end
-              to={pathKeys.catalog()}
+              to={pathKeys.catalog.root()}
               className={({ isActive }) => isActive ? s.active : ''}
             >Каталог</NavLink>
           </li>
