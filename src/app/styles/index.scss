@@ -4,7 +4,7 @@
 @import 'themes/dark.scss';
 
 .app {
-  height: 100%;
+  min-height: 100%;
   background-color: var(--bg-main);
   color: var(--text-color-main);
 }
