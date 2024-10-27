@@ -1,18 +1,26 @@
 import clsx from 'clsx'
+import { Link, LinkProps } from 'react-router-dom'
 import s from './styles.module.scss'
 
 import type { ElementType, ReactNode } from 'react'
 
-interface TitleProps {
-  children: ReactNode,
-  as?: ElementType,
-  className?: string,
+type BaseTitleProps<T extends ElementType> = {
+  children: ReactNode
+  as?: T
+  to: any,
+  className?: string
   size?: 'small' | 'medium' | 'large' | 'xl'
 }
 
-const defaultElement: ElementType = 'h1'
+export type TitleProps<T extends ElementType> = T extends typeof Link
+  ? BaseTitleProps<T> & LinkProps
+  : BaseTitleProps<T>
 
-export function Title(props: TitleProps) {
+const defaultElement: ElementType = 'h2'
+
+export function Title<T extends ElementType = typeof defaultElement>(
+  props: TitleProps<T>
+) {
   const { as, size = 'large', className, children, ...restProps } = props
   const Element = as || defaultElement
 
