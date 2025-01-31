@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { pathKeys } from '~/shared/lib/react-router'
+import { replaceFileExtension } from '~/shared/lib/file/replaceFileExtension'
+
 import { MovieRating } from '~ui/movie-rating'
 import type { SlideProps } from '../config'
 
@@ -19,11 +21,16 @@ export function HeroSlide(props: SlideProps) {
           <span>{info}</span>
         </div>
       </div>
-      <img
-        src={image}
-        alt={title}
-        className={s.img}
+      <picture>
+        <source srcSet={image} />
+        <source srcSet={replaceFileExtension(image, 'jpg')} />
+        <img
+          src={image}
+          alt={title}
+          loading='lazy'
+          className={s.img}
       />
+      </picture>
     </div>
   )
 }

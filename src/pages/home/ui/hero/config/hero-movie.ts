@@ -7,7 +7,7 @@ export const heroMovies: SlideProps[] = [
     rating: 7.4,
     title: 'Вонка',
     genre: 'Семейный',
-    image: '/images/home-hero/hero-7.jpg',
+    image: '/images/home-hero/hero-7.webp',
     ageRating: 6,
     hang: 'Новинка'
   },
@@ -17,7 +17,7 @@ export const heroMovies: SlideProps[] = [
     rating: 8.3,
     title: 'Оппенгеймер',
     genre: 'История',
-    image: '/images/home-hero/hero-1.jpg',
+    image: '/images/home-hero/hero-1.webp',
     ageRating: 18,
     hang: 'Лучший фильм года'
   },
@@ -27,7 +27,7 @@ export const heroMovies: SlideProps[] = [
     rating: 6.6,
     title: 'Барби',
     genre: 'Фэнтези',
-    image: '/images/home-hero/hero-2.jpg',
+    image: '/images/home-hero/hero-2.webp',
     ageRating: 14,
     hang: null
   },
@@ -37,7 +37,7 @@ export const heroMovies: SlideProps[] = [
     rating: 6.7,
     title: 'Оставь мир позади',
     genre: 'Фантастика',
-    image: '/images/home-hero/hero-3.jpg',
+    image: '/images/home-hero/hero-3.webp',
     ageRating: 16,
     hang: null
   },
@@ -47,7 +47,7 @@ export const heroMovies: SlideProps[] = [
     rating: 7.6,
     title: 'Гран туризмо',
     genre: 'Спорт',
-    image: '/images/home-hero/hero-4.jpg',
+    image: '/images/home-hero/hero-4.webp',
     ageRating: 14,
     hang: 'Новинка'
   },
@@ -57,7 +57,7 @@ export const heroMovies: SlideProps[] = [
     rating: 6.5,
     title: 'Наполеон',
     genre: 'История',
-    image: '/images/home-hero/hero-5.jpg',
+    image: '/images/home-hero/hero-5.webp',
     ageRating: 12,
     hang: null
   },
@@ -67,7 +67,7 @@ export const heroMovies: SlideProps[] = [
     rating: 6.5,
     title: 'Создатель',
     genre: 'Драма',
-    image: '/images/home-hero/hero-6.jpg',
+    image: '/images/home-hero/hero-6.webp',
     ageRating: 12,
     hang: 'Семейный'
   },

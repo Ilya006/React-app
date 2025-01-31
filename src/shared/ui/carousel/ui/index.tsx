@@ -38,7 +38,7 @@ export function Carousel<T, _>(props: CarouselProps<T>) {
   const [prevEl, prevElRef] = useDomRefWithSetter<HTMLButtonElement>()
 
   const renderSlides = useCallback(
-    (slides: typeof items) => 
+    (slides: typeof items) =>
       slides?.map((item, inx) => (
         <SwiperSlide
           key={inx}
