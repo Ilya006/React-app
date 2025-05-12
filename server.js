@@ -1,9 +1,12 @@
 import express from 'express'
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'node:url'
 
 import { createServer as createViteServer } from 'vite'
+
 const port = 3000
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 async function createServer () {
   const app = express()
@@ -29,7 +32,7 @@ async function createServer () {
   
       template = await vite.transformIndexHtml(url, template)
       const { render } = await vite.ssrLoadModule('./src/entry-server.tsx')
-      const appHtml = render(url)
+      const appHtml = await render(url)
   
       const html = template.replace(
         '<!--ssr-outlet-->',
@@ -52,4 +55,4 @@ async function createServer () {
   })
 }
 
-createServer()
+createServer().then(() => {})
