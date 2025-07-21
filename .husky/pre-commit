@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+val1=56
+
+if [ $val1 -gt 5 ]
+  then echo "$val1 больше 5"
+  else echo "$val1 не больше 5"
+fi
