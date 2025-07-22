@@ -1,15 +1,11 @@
 import { renderToString } from 'react-dom/server'
-import App from './app'
 import { StaticRouter } from 'react-router-dom/server'
+import { App } from './app'
 
 export function render (url: string) {
-  console.log('URL: ', url)
-
-  return `
-    <div id="root">${renderToString(
-      <StaticRouter location={url}>
-        <App />
-      </StaticRouter>
-    )}</div>
-  `
+  return renderToString(
+    <StaticRouter location={url}>
+      <App />
+    </StaticRouter>
+  )
 }

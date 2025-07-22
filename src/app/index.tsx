@@ -1,15 +1,7 @@
-// import { RouterProvider } from 'react-router-dom'
-// import { routers } from './routers'
 import './styles/index.scss'
+import {useRoutes} from "react-router-dom";
+import {routers} from "~/app/routers";
 
-function App() {
-  return (
-    <div>
-      <h2>Hello SSR!</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, repellat.</p>
-    </div>
-    // <RouterProvider router={routers} />
-  )
+export function App() {
+  return useRoutes(routers)
 }
-
-export default App
