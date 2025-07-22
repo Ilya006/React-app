@@ -12,6 +12,7 @@
     "preview": "cross-env NODE_ENV=production node server"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
     "@types/express": "^5.0.0",
     "axios": "^1.7.3",
     "clsx": "^2.1.1",
@@ -24,6 +25,7 @@
     "react-router-dom": "^6.26.0",
     "sirv": "^3.0.1",
     "swiper": "^11.1.10",
+    "tailwindcss": "^4.1.11",
     "zod": "^3.23.8"
   },
   "devDependencies": {
