@@ -19,5 +19,8 @@ export default defineConfig({
       '~': path.resolve(__dirname, './src'),
       '~ui': path.resolve(__dirname, './src/shared/ui')
     }
+  },
+  build: {
+    manifest: true
   }
 })

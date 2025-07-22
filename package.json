@@ -5,20 +5,24 @@
   "type": "module",
   "scripts": {
     "dev": "node server",
-    "build": "tsc -b && vite build",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "tsc -b && vite build --outDir dist/client",
+    "build:server": "tsc -b && vite build --ssr src/entry-server.tsx --outDir dist/server",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "cross-env NODE_ENV=production node server"
   },
   "dependencies": {
     "@types/express": "^5.0.0",
     "axios": "^1.7.3",
     "clsx": "^2.1.1",
+    "compression": "^1.8.1",
     "express": "^4.21.2",
     "node-cache": "^5.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.26.0",
+    "sirv": "^3.0.1",
     "swiper": "^11.1.10",
     "zod": "^3.23.8"
   },
@@ -30,6 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^7.15.0",
     "@typescript-eslint/parser": "^7.15.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
