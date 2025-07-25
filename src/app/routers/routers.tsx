@@ -4,7 +4,6 @@ import { homePageRoute } from '~/pages/home'
 import { BubbleError } from '~ui/BubbleError'
 import { pathKeys } from '~/shared/lib/react-router'
 import { MainLayout } from '../layouts/main-layout'
-import { testPageRoute } from '~/pages/test/config/route'
 
 export const routers: RouteObject[] = ([
   {
@@ -12,7 +11,7 @@ export const routers: RouteObject[] = ([
     children: [
       {
         element: <MainLayout />,
-        children: [homePageRoute, testPageRoute]
+        children: [homePageRoute]
       },
       {
         element: <Outlet />,
@@ -20,7 +19,7 @@ export const routers: RouteObject[] = ([
       },
       {
         path: '*',
-        loader: async () => redirect(pathKeys.page404())
+        loader: () => redirect(pathKeys.page404())
       }
     ]
   }

@@ -1,4 +1,4 @@
-import './styles/index.scss'
+import './styles/index.css'
 import {useRoutes} from "react-router-dom";
 import {routers} from "~/app/routers";
 
