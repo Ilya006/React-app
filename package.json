@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node server",
+    "dev": "NODE_ENV=development node server.dev.js",
+    "prod": "npm run build && NODE_ENV=production node server.prod.js",
     "build": "npm run build:client && npm run build:server",
-    "build:client": "tsc -b && vite build --outDir dist/client",
-    "build:server": "tsc -b && vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "build:client-app": "vite build --emptyOutDir --outDir dist/client-app",
+    "build:server-app": "vite build --emptyOutDir --outDir dist/server-app --ssr src/entry-server.tsx",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "cross-env NODE_ENV=production node server"
   },

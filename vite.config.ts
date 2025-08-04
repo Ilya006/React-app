@@ -27,6 +27,8 @@ export default defineConfig({
     }
   },
   build: {
-    manifest: true
+    watch: {
+      include: ['./server.dev.js']
+    }
   }
 })
